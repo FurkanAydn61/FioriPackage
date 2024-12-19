@@ -63,7 +63,7 @@
           "bundleName": "fioriodatav2.i18n.i18n"
         }
       },
-      "": {
+      "mPers": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
