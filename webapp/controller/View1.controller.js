@@ -1,9 +1,12 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
+    'sap/ui/model/Sorter',
 ],
-function (Controller, MessageToast, JSONModel) {
+function (Controller, MessageToast, JSONModel, Filter, FilterOperator, Sorter) {
     "use strict";
 
     return Controller.extend("fioriodatav2.controller.View1", {
@@ -93,6 +96,35 @@ function (Controller, MessageToast, JSONModel) {
                     MessageToast.show("Error:" + sMessage);
                 }
             });
+        },
+        onPressDelete(){
+            var oView = this.getView();
+            var oModel = oView.getModel();
+
+            var sPersId = oView.byId("inpId").getValue();
+            var sPath = "/persProcessSet(PersId='"+sPersId+"')";
+            oModel.remove(sPath, {
+                success: function(oSuccess){
+                MessageToast.show("Success");
+                },
+                error: function(oError){
+                    var sMessage = JSON.parse(oError.responseText).error.message.value;
+                    MessageToast.show("Error:" + sMessage);
+                }
+            });
+        },
+
+        onFilter(oEvent){
+            const aFilter = [];
+            const sQuery = oEvent.getParameter("query");
+            if (sQuery) {
+				aFilter.push(new Filter("PersName", FilterOperator.Contains, sQuery));
+			}
+
+            const oList = this.byId("persProcessSet");
+            const oBinding = oList.getBinding("items");
+            oBinding.filter(aFilter);
         }
+
     });
 });

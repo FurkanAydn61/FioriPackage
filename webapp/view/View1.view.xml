@@ -28,6 +28,35 @@
             </ColumnListItem>
         </items>
     </Table>
+    <List 
+    id="persProcessSet" 
+    class="sapUiResponsiveMargin" 
+    width="auto"
+       items="{
+         path : 'mPers>/results',
+         sorter : {
+            path : 'PersTitle',
+            group : true 
+         }
+        }">
+    <headerToolbar>
+        <Toolbar >
+        <Title text="Personel Listesi"/>
+        <ToolbarSpacer />   
+        <SearchField 
+            width="50%"
+            search=".onFilter"/>    
+        </Toolbar>
+    </headerToolbar>
+    <items> 
+            <StandardListItem
+            title="{mPers>PersId}"
+            description="{mPers>PersName}"
+            icon="sap-icon://employee"
+            info="{mPers>PersTitle}" 
+            press=".onPress"/>
+    </items>
+    </List>
     </content>
     <footer>
         <OverflowToolbar >
@@ -36,6 +65,7 @@
         <Button text="Create"   press=".onPressCreate"   icon="sap-icon://add-employee"/>
         <Button text="Read"     press=".onPressRead"     icon="sap-icon://employee-lookup"/>
         <Button text="Update"   press=".onPressUpdate"   icon="sap-icon://employee-approvals"/>
+        <Button text="Delete"   press=".onPressDelete"   icon="sap-icon://employee-rejections"/>
         </OverflowToolbar>
     </footer>
 </Page>
