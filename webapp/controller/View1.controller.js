@@ -29,6 +29,28 @@ function (Controller, MessageToast, JSONModel) {
                     MessageToast.show("Error:" + sMessage);
                 }
             });
+        },
+        onPressCreate(){
+            var oView = this.getView();
+            var oModel = oView.getModel();
+
+            var oData = {
+                PersId:     oView.byId("inpId").getValue(),
+                PersName:   oView.byId("inpName").getValue(),
+                PersTitle:  oView.byId("inpTitle").getValue()
+            }
+
+            var sPath = "/persProcessSet";
+
+            oModel.create(sPath, oData, {
+                success: function(oSuccess){
+                MessageToast.show("Success");
+                },
+                error: function(oError){
+                    var sMessage = JSON.parse(oError.responseText).error.message.value;
+                    MessageToast.show("Error:" + sMessage);
+                }
+            });
         }
     });
 });

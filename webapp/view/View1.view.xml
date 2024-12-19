@@ -1,8 +1,17 @@
 <mvc:View controllerName="fioriodatav2.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
 <Page >
     <content>
+    <f:SimpleForm title="Personel Process" >
+        <Label text= "Personel ID"/>
+        <Input id="inpId"/>
+        <Label text="Personel Name"/>
+        <Input id="inpName"/>
+        <Label text="Personel Title"/>
+        <Input id="inpTitle"/>
+    </f:SimpleForm>
     <Table items="{mPers>/results}">
         <columns>
             <Column ><Text text="Personel ID"/></Column>
@@ -24,6 +33,7 @@
         <OverflowToolbar >
         <ToolbarSpacer />
         <Button text="Liste" press=".onPressReadList" icon="sap-icon://employee"/>
+        <Button text="Create" press=".onPressCreate"  icon="sap-icon://add-employee"/>
         </OverflowToolbar>
     </footer>
 </Page>
