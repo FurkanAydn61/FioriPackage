@@ -1,8 +1,9 @@
 <mvc:View controllerName="fioriodatav2.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-
-    <Table items="{mPers>/persProcessSet}">
+<Page >
+    <content>
+    <Table items="{mPers>/results}">
         <columns>
             <Column ><Text text="Personel ID"/></Column>
             <Column ><Text text="Personel Name"/></Column>
@@ -18,5 +19,12 @@
             </ColumnListItem>
         </items>
     </Table>
-
+    </content>
+    <footer>
+        <OverflowToolbar >
+        <ToolbarSpacer />
+        <Button text="Liste" press=".onPressReadList" icon="sap-icon://employee"/>
+        </OverflowToolbar>
+    </footer>
+</Page>
 </mvc:View>
