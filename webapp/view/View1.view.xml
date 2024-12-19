@@ -1,7 +1,22 @@
 <mvc:View controllerName="fioriodatav2.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
-    </Page>
+
+    <Table items="{/persProcessSet}">
+        <columns>
+            <Column ><Text text="Personel ID"/></Column>
+            <Column ><Text text="Personel Name"/></Column>
+            <Column ><Text text="Personel Title"/></Column>
+        </columns>
+        <items>
+            <ColumnListItem >
+                <cells>
+                    <Text text="{PersId}"/>
+                    <Text text="{PersName}"/>
+                    <Text text="{PersTitle}"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+
 </mvc:View>
