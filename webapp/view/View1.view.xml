@@ -32,8 +32,9 @@
     <footer>
         <OverflowToolbar >
         <ToolbarSpacer />
-        <Button text="Liste" press=".onPressReadList" icon="sap-icon://employee"/>
-        <Button text="Create" press=".onPressCreate"  icon="sap-icon://add-employee"/>
+        <Button text="Liste"    press=".onPressReadList" icon="sap-icon://employee"/>
+        <Button text="Create"   press=".onPressCreate"   icon="sap-icon://add-employee"/>
+        <Button text="Read"     press=".onPressRead"     icon="sap-icon://employee-lookup"/>
         </OverflowToolbar>
     </footer>
 </Page>

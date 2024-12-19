@@ -51,6 +51,26 @@ function (Controller, MessageToast, JSONModel) {
                     MessageToast.show("Error:" + sMessage);
                 }
             });
+        },
+
+        onPressRead(){
+            var oView   = this.getView();
+            var oModel  = oView.getModel(); 
+            
+            var sPersId = oView.byId("inpId").getValue();
+
+            var sPath = "/persProcessSet(PersId='"+sPersId+"')";
+            oModel.read(sPath, {
+                success: function(oSuccess){
+                oView.byId("inpName").setValue(oSuccess.PersName);
+                oView.byId("inpTitle").setValue(oSuccess.PersTitle);
+                MessageToast.show("Success");
+                },
+                error: function(oError){
+                    var sMessage = JSON.parse(oError.responseText).error.message.value;
+                    MessageToast.show("Error:" + sMessage);
+                }
+            });
         }
     });
 });
