@@ -6,7 +6,8 @@ function (Controller) {
 
     return Controller.extend("fioriodatav2.controller.View1", {
         onInit: function () {
-
+           var oModel = this.getOwnerComponent().getModel();
+           this.getView().setModel(oModel, "mPers") 
         }
     });
 });
