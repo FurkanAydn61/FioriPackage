@@ -28,35 +28,6 @@
             </ColumnListItem>
         </items>
     </Table>
-    <List 
-    id="persProcessSet" 
-    class="sapUiResponsiveMargin" 
-    width="auto"
-       items="{
-         path : 'mPers>/results',
-         sorter : {
-            path : 'PersTitle',
-            group : true 
-         }
-        }">
-    <headerToolbar>
-        <Toolbar >
-        <Title text="Personel Listesi"/>
-        <ToolbarSpacer />   
-        <SearchField 
-            width="50%"
-            search=".onFilter"/>    
-        </Toolbar>
-    </headerToolbar>
-    <items> 
-            <StandardListItem
-            title="{mPers>PersId}"
-            description="{mPers>PersName}"
-            icon="sap-icon://employee"
-            info="{mPers>PersTitle}" 
-            press=".onPress"/>
-    </items>
-    </List>
     </content>
     <footer>
         <OverflowToolbar >
