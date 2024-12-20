@@ -4,15 +4,21 @@
     xmlns:f="sap.ui.layout.form">
 <Page >
     <content>
-    <f:SimpleForm title="Personel Process" >
+    <Panel expandable="true" expanded="false" stickyHeader="true" width="auto" headerText="{i18n>persTitle}" class="sapUiResponsiveMargin">
+    <content>
+        <f:SimpleForm title="Personel Process" >
         <Label text= "Personel ID"/>
-        <Input id="inpId"/>
+        <Input id="inpId" placeholder="Personel ID"/>
         <Label text="Personel Name"/>
-        <Input id="inpName"/>
+        <Input id="inpName" placeholder="Personel Name"/>
         <Label text="Personel Title"/>
-        <Input id="inpTitle"/>
-    </f:SimpleForm>
-    <Table items="{mPers>/results}">
+        <Input id="inpTitle" placeholder="Personel Title"/>
+        </f:SimpleForm>
+    </content>
+    </Panel>
+    <Panel expandable="true" expanded="false" stickyHeader="true" width="auto" headerText="{i18n>persTablo}" class="sapUiResponsiveMargin">
+        <content>
+                <Table items="{mPers>/results}">
         <columns>
             <Column ><Text text="Personel ID"/></Column>
             <Column ><Text text="Personel Name"/></Column>
@@ -27,7 +33,10 @@
                 </cells>
             </ColumnListItem>
         </items>
-    </Table>
+    </Table>       
+        </content>
+    </Panel>
+
     </content>
     <footer>
         <OverflowToolbar >
