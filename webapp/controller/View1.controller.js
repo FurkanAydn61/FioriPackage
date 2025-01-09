@@ -1,12 +1,12 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
+    "sap/m/MessageToast",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    'sap/m/MessageToast',
-
+    'sap/ui/model/Sorter',
 ],
-function (Controller, MessageToast, JSONModel, Filter, FilterOperator) {
+function (Controller, MessageToast, JSONModel, Filter, FilterOperator,) {
     "use strict";
 
     return Controller.extend("fioriodatav2.controller.View1", {
@@ -16,22 +16,22 @@ function (Controller, MessageToast, JSONModel, Filter, FilterOperator) {
         },
 
         onPressReadList(){
-             var oView = this.getView();
+            var oView = this.getView();
             var oModel = oView.getModel();
             
             var sPath = "/persProcessSet";
-             oModel.read(sPath, {
+            oModel.read(sPath, {
                 success: function(oSuccess){
-                 var oJSONModel = new JSONModel();
+                var oJSONModel = new JSONModel();
                 oJSONModel.setData(oSuccess);
                 oView.setModel(oJSONModel, "mPers");
-               MessageToast.show("Success");
-                 },
+                MessageToast.show("Success");
+                },
                 error: function(oError){
-                   var sMessage = JSON.parse(oError.responseText).error.message.value;
-                     MessageToast.show("Error:" + sMessage);
-                 }
-             });
+                    var sMessage = JSON.parse(oError.responseText).error.message.value;
+                    MessageToast.show("Error:" + sMessage);
+                }
+            });
         },
         onPressCreate(){
             var oView = this.getView();
@@ -128,3 +128,4 @@ function (Controller, MessageToast, JSONModel, Filter, FilterOperator) {
 
     });
 });
+
