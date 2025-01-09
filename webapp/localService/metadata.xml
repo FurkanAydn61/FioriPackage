@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
-    <edmx:DataServices m:DataServiceVersion="2.0">
-        <Schema Namespace="ZFA_PERS_SRV" xml:lang="tr" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-            <EntityType Name="persProcess" sap:content-version="1">
-                <Key>
-                    <PropertyRef Name="PersId"/>
-                </Key>
-                <Property Name="PersId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="PersName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-                <Property Name="PersTitle" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
-            </EntityType>
-            <EntityContainer Name="ZFA_PERS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-                <EntitySet Name="persProcessSet" EntityType="ZFA_PERS_SRV.persProcess" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
-            </EntityContainer>
-            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
-            <atom:link rel="self" href="http://f4hs4hana.mydomain.com:8000/sap/opu/odata/sap/ZFA_PERS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-            <atom:link rel="latest-version" href="http://f4hs4hana.mydomain.com:8000/sap/opu/odata/sap/ZFA_PERS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-        </Schema>
-    </edmx:DataServices>
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZFA_PERS_SRV" xml:lang="tr" sap:schema-version="1">
+<EntityType Name="persProcess" sap:content-version="1">
+<Key>
+<PropertyRef Name="PersId"/>
+</Key>
+<Property Name="PersId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="PersName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="PersTitle" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityContainer Name="ZFA_PERS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+<EntitySet Name="persProcessSet" EntityType="ZFA_PERS_SRV.persProcess" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+</EntityContainer>
+<Annotation xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://f4hs4hana.mydomain.com:44300/sap/opu/odata/SAP/ZFA_PERS_SRV/$metadata"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://f4hs4hana.mydomain.com:44300/sap/opu/odata/SAP/ZFA_PERS_SRV/$metadata"/>
+</Schema>
+</edmx:DataServices>
 </edmx:Edmx>

@@ -1,6 +1,5 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
